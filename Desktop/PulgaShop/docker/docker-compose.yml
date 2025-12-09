@@ -1,9 +1,15 @@
 services:
   frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
     image: uribe22/pulgashop-frontend:latest
     ports:
       - "4041:80"
   backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
     image: uribe22/pulgashop-backend:latest
     env_file:
       - ./.env
